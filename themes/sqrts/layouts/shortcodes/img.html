@@ -1,0 +1,15 @@
+
+<!-- surround each of the following with double braces to call
+    < gallery class="content-gallery" >}}
+  < img src="/images/one.jpg" >}}
+  < img src="/images/two.jpg" >}}
+< /gallery >}}
+< img src="/images/three.jpg" >}}
+-->
+
+{{- $src := .Get "src" -}}
+{{- with .Parent -}}
+  <img src="{{$src}}" class="{{.Get "class"}}-image">
+{{- else -}}
+  <img src="{{$src}}">
+{{- end }}
